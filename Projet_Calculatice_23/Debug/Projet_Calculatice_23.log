@@ -1,0 +1,6 @@
+﻿  main.c
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\main.c(37,11): warning C4477:  'scanf_s' : la chaîne de format '%f' nécessite un argument de type 'float *', mais l'argument variadique 1 est de type 'double *'
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\main.c(37,11): message :  utilisez '%lf' dans la chaîne de format
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\main.c(38,26): warning C4047:  'fonction' : les niveaux d'indirection de 'uint8_t **' et de 'uint8_t (*)[32]' sont différents
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\main.c(38,26): warning C4024:  'ConvBin' : types différents pour le paramètre formel et réel 2
+  Projet_Calculatice_23.vcxproj -> C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Debug\Projet_Calculatice_23.exe
