@@ -84,19 +84,39 @@ void ConvBin(double userVal, uint8_t* tbBin, uint8_t sizeTbBin)
 // Date de création	 : 02.06.2023
 // Date modification : xx.xx.20xx
 //---
-void AfficheBin(double userVal, uint8_t* tbBin, uint8_t sizeTb, uint8_t nbBits)
+void AfficheBin(double userVal, uint8_t* tbBin, uint8_t sizeTb, uint8_t mode)
 {
 	uint8_t i = 0;
+	uint8_t nbBits = 0;
 
-	if (nbBits = 0)
+	if (mode > 3)
 	{
-		nbBits = 32;
+		mode = 0;
 	}
-	else
+	if (mode != 0)
 	{
 		userVal = (int)userVal;
 	}
+	nbBits = mode * 8;
 	ConvBin(userVal, tbBin, sizeTb);
+	switch (mode)
+	{
+		case 0:
+			nbBits = 32;
+			// boucle enlever les 0---------------------------------------------
+			break;
+		case 1:
+			nbBits = 8;
+			break;
+		case 2:
+			nbBits = 16;
+			break;
+		case 3:
+			nbBits = 32;
+			break;
+		default:
+			break;
+	}
 	for (i = nbBits; i > 0; i--)
 	{
 		if (tbBin[i - 1] == 46)
