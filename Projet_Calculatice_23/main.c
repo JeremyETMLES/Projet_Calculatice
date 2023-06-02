@@ -34,11 +34,18 @@ void main()
 	uint8_t i = 0;
 
 	do {
-		scanf_s("%f", &userVal);
-		ConvBin(userVal, &tbBin);
-		for (i = 0; i < sizeof(tbBin); i++)
+		scanf_s("%lf%*C", &userVal, 1);
+		ConvBin(userVal, &tbBin, sizeof(tbBin));
+		for (i = sizeof(tbBin); i > 0; i--)
 		{
-			printf("%d", tbBin[i]);
+			if (tbBin[i - 1] == 46)
+			{
+				printf(".");
+			}
+			else
+			{
+				printf("%d", tbBin[i - 1]);
+			}
 		}
 		scanf_s("%c%*c", &UserAnswer, 2);
 	} while (!(UserAnswer == 'Q' || UserAnswer == 'q'));

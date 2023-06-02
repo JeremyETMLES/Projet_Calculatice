@@ -14,8 +14,8 @@
 //----------------------------------------------------------------------------------//
 
 //--- librairie standart ---//
-#include <stdio.h>                  // entrée - sortie
 #include <stdlib.h>                 // pour les fonctions systèmes
+#include <stdio.h>                  // entrée - sortie
 #include <stdint.h>
 
 //-- librairie personnelle --// 
@@ -28,17 +28,21 @@
 // Remarque : -
 // Auteur : JAR et MBR
 // Date de création	 : 23.05.2023
-// Date modification : xx.xx.20xx
+// Date modification : 02.06.2023
 //---
-void ConvBin(double userVal, uint8_t* tbBin[32])
+void ConvBin(double userVal, uint8_t* tbBin, uint8_t sizeTbBin)
 {
-	int32_t intUserVal = 0;
-	float virgule = 0;
-	uint8_t i = 0;
+	uint32_t intUserVal = 0;		// Variable de la partie entière
+	float virgule = 0;	// Variable contenant la partie après la virgule
+	uint8_t i = 0;	// Variable de comptage
 
-	intUserVal = (int)userVal;
-	virgule = userVal - intUserVal;
-	if (virgule != 0)
+	if (userVal < 0)
+	{
+		userVal = 4294967295 + userVal + 1;	// Conplément à 2
+	}
+	intUserVal = (uint32_t)userVal;	// Récupération de la partie entière
+	virgule = userVal - intUserVal;	// Récupération de la valeur après la virgule
+	if (virgule != 0)	// Convertion de ce qui est après la vigule si il y en a
 	{
 		for (i = 0; i < 3; i++)
 		{
@@ -49,24 +53,59 @@ void ConvBin(double userVal, uint8_t* tbBin[32])
 			else
 			{
 				tbBin[i] = 1;
+				virgule -= 0.5;
 			}
 			virgule *= 2;
-
 		}
 		tbBin[i] = 0x2E;	// Ajoute le point
 		i++;
 	}
-	while (intUserVal > 0)
+	while (intUserVal > 0)	// Convertion de la partie entière du nombre
 	{
 		tbBin[i] = intUserVal % 2;
 		intUserVal = intUserVal / 2;
 		i++;
 	}
-	if (i < sizeof(tbBin))
+	if (i < sizeTbBin)	// Rempliasage du reste du tablesu par des 0
 	{
-		for (i; i < sizeof(tbBin); i++)
+		for (i; i < sizeTbBin; i++)
 		{
 			tbBin[i] = 0;
+		}
+	}
+}
+
+//---
+// Nom fonction : AfficheBin
+// Paramètres entrée / sortie / inout : userVal, tbBin, sizeTbBin/-/-
+// Description : Affiche une valeur binéaire
+// Remarque : -
+// Auteur : JAR et MBR
+// Date de création	 : 02.06.2023
+// Date modification : xx.xx.20xx
+//---
+void AfficheBin(double userVal, uint8_t* tbBin, uint8_t sizeTb, uint8_t nbBits)
+{
+	uint8_t i = 0;
+
+	if (nbBits = 0)
+	{
+		nbBits = 32;
+	}
+	else
+	{
+		userVal = (int)userVal;
+	}
+	ConvBin(userVal, tbBin, sizeTb);
+	for (i = nbBits; i > 0; i--)
+	{
+		if (tbBin[i - 1] == 46)
+		{
+			printf(".");
+		}
+		else
+		{
+			printf("%d", tbBin[i - 1]);
 		}
 	}
 }

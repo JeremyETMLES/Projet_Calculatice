@@ -18,6 +18,6 @@
 
 
 // Prototype de fonction
-void ConvBin(double userVal, uint8_t* tbBin[32]);
+void ConvBin(double userVal, uint8_t* tbBin[32], uint8_t sizeTbBin);
 
 #endif
