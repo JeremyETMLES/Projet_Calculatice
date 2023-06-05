@@ -32,13 +32,14 @@
 //---
 void ConvBin(double userVal, uint8_t* tbBin, uint8_t sizeTbBin)
 {
-	uint32_t intUserVal = 0;		// Variable de la partie entière
-	float virgule = 0;	// Variable contenant la partie après la virgule
-	uint8_t i = 0;	// Variable de comptage
+	uint32_t intUserVal = 0;	// Variable de la partie entière
+	float virgule = 0;		// Variable contenant la partie après la virgule
+	uint8_t i = 0;		// Variable de comptage
 
 	if (userVal < 0)
 	{
-		userVal = 4294967295 + userVal + 1;	// Conplément à 2
+		// Calcul du complément à 2
+		userVal = 4294967295 + userVal + 1;		// (2^32) - 1 = 4294967295
 	}
 	intUserVal = (uint32_t)userVal;	// Récupération de la partie entière
 	virgule = userVal - intUserVal;	// Récupération de la valeur après la virgule
@@ -86,45 +87,56 @@ void ConvBin(double userVal, uint8_t* tbBin, uint8_t sizeTbBin)
 //---
 void AfficheBin(double userVal, uint8_t* tbBin, uint8_t sizeTb, uint8_t mode)
 {
-	uint8_t i = 0;
-	uint8_t nbBits = 0;
+	uint8_t i = 0;		// Variable de comptage
+	uint8_t nbBits = 0;	// Variable du nombre de bits à afficher
 
+	// Si le mode ne correspond à aucun des 4, passer en mode normal
 	if (mode > 3)
 	{
 		mode = 0;
 	}
+	// Si on n'est pas en mode normal, enlever la virgule
 	if (mode != 0)
 	{
 		userVal = (int)userVal;
 	}
-	nbBits = mode * 8;
+	// Appel de la fonction de convertion de la valeur en binéaire
 	ConvBin(userVal, tbBin, sizeTb);
+	// Machine d'état du mode
 	switch (mode)
 	{
 		case 0:
-			nbBits = 32;
-			// boucle enlever les 0---------------------------------------------
+			nbBits = 32;	// Nombre de bits à afficher: 8
+			// Boucle permetant de ne pas afficher les 0 inutiles
+			while (tbBin[nbBits - 1] == 0)
+			{
+				nbBits--;
+			}
 			break;
 		case 1:
-			nbBits = 8;
+			nbBits = 8;		// Nombre de bits à afficher: 8
 			break;
 		case 2:
-			nbBits = 16;
+			nbBits = 16;	// Nombre de bits à afficher: 16
 			break;
 		case 3:
-			nbBits = 32;
+			nbBits = 32;	// Nombre de bits à afficher: 32
 			break;
 		default:
 			break;
 	}
+	// Affichage de la valeur binéaire
 	for (i = nbBits; i > 0; i--)
 	{
+		// Si la valeur est le code ASCII du point
 		if (tbBin[i - 1] == 46)
 		{
+			// Afficher un point
 			printf(".");
 		}
 		else
 		{
+			// Afficher la valeur du bit
 			printf("%d", tbBin[i - 1]);
 		}
 	}
