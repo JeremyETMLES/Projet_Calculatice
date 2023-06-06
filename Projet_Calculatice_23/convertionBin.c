@@ -141,3 +141,32 @@ void AfficheBin(double userVal, uint8_t* tbBin, uint8_t sizeTb, uint8_t mode)
 		}
 	}
 }
+
+//---
+// Nom fonction : ChoixConvBin
+// Paramètres entrée / sortie / inout : -/-/-
+// Description : Convertit et affiche une valeur en binéaire
+// Remarque : -
+// Auteur : JAR et MBR
+// Date de création	 : 06.06.2023
+// Date modification : xx.xx.20xx
+//---
+void ChoixConvBin(void)
+{
+	// Variables locales
+	double userVal = 0;		// Variable de sauvegarde de la valeur à convertire
+	uint8_t tbBin[32] = { 0 };	// Tableau de sauvegarde de la convertion
+	uint8_t i = 0;		// Variable de comptage
+	uint8_t mode = 0;	// Variable du mode choisit
+
+	printf("Entrer la valeur a convertire: ");
+	scanf_s("%lf%*C", &userVal, 1);
+	while ((userVal < 0) && (((int)(userVal * 10)) % 10))
+	{
+		printf("Ce programe ne prend pas en compte les valeurs négative à virgule.\n Reentrer votre valeur:");
+		scanf_s("%lf%*C", &userVal, 1);
+	}
+	printf("Choisiser un mode: \nMode normal (0) \nMode 8 bits (1) \nMode 16 bits (2) \nMode 32 bits (3) \n");
+	scanf_s("%d%*C", &mode, 1);
+	AfficheBin(userVal, tbBin, sizeof(tbBin), mode);
+}

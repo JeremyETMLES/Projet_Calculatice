@@ -1,10 +1,12 @@
 ﻿  Fonction.c
 C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\Fonction.c(34,1): warning C4028:  paramètre formel 2 différent de la déclaration
-  main.c
-C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\Fonction.c(44,32): warning C4244:  '=' : conversion de 'double' en 'float', perte possible de données
-C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\main.c(37,31): warning C4474:  'scanf_s' : trop d'arguments passés pour la chaîne de format
-C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\main.c(37,31): message :  les espaces réservés et leurs paramètres attendent des arguments 1 variadiques, mais des arguments 2 ont été fournis
-C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\main.c(38,26): warning C4047:  'fonction' : les niveaux d'indirection de 'uint8_t **' et de 'uint8_t (*)[32]' sont différents
-  Génération de code en cours...
-C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\main.c(38,26): warning C4024:  'ConvBin' : types différents pour le paramètre formel et réel 2
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\Fonction.c(45,32): warning C4244:  '=' : conversion de 'double' en 'float', perte possible de données
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\Fonction.c(163,30): warning C4474:  'scanf_s' : trop d'arguments passés pour la chaîne de format
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\Fonction.c(163,30): message :  les espaces réservés et leurs paramètres attendent des arguments 1 variadiques, mais des arguments 2 ont été fournis
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\Fonction.c(167,31): warning C4474:  'scanf_s' : trop d'arguments passés pour la chaîne de format
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\Fonction.c(167,31): message :  les espaces réservés et leurs paramètres attendent des arguments 1 variadiques, mais des arguments 2 ont été fournis
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\Fonction.c(170,10): warning C4477:  'scanf_s' : la chaîne de format '%d' nécessite un argument de type 'int *', mais l'argument variadique 1 est de type 'uint8_t *'
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\Fonction.c(170,10): message :  utilisez '%hhd' dans la chaîne de format
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\Fonction.c(170,26): warning C4474:  'scanf_s' : trop d'arguments passés pour la chaîne de format
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\Fonction.c(170,26): message :  les espaces réservés et leurs paramètres attendent des arguments 1 variadiques, mais des arguments 2 ont été fournis
   Projet_Calculatice_23.vcxproj -> C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Debug\Projet_Calculatice_23.exe

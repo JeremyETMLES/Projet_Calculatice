@@ -29,24 +29,10 @@ void main()
 {
 	//-- déclaration de variables --// 
 	uint8_t UserAnswer = 0;
-	double userVal = 0;
-	uint8_t tbBin[32] = { 0 };
-	uint8_t i = 0;
 
 	do {
-		scanf_s("%lf%*C", &userVal, 1);
-		ConvBin(userVal, &tbBin, sizeof(tbBin));
-		for (i = sizeof(tbBin); i > 0; i--)
-		{
-			if (tbBin[i - 1] == 46)
-			{
-				printf(".");
-			}
-			else
-			{
-				printf("%d", tbBin[i - 1]);
-			}
-		}
+		ChoixConvBin();
+		printf("\nVoulez-vous recommencer le programme? (q = quitter)");
 		scanf_s("%c%*c", &UserAnswer, 2);
 	} while (!(UserAnswer == 'Q' || UserAnswer == 'q'));
 }
