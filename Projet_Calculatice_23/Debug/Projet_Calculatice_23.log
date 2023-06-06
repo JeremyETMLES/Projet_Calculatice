@@ -1,12 +1,12 @@
-﻿  Fonction.c
-C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\Fonction.c(34,1): warning C4028:  paramètre formel 2 différent de la déclaration
-C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\Fonction.c(45,32): warning C4244:  '=' : conversion de 'double' en 'float', perte possible de données
-C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\Fonction.c(163,30): warning C4474:  'scanf_s' : trop d'arguments passés pour la chaîne de format
-C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\Fonction.c(163,30): message :  les espaces réservés et leurs paramètres attendent des arguments 1 variadiques, mais des arguments 2 ont été fournis
-C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\Fonction.c(167,31): warning C4474:  'scanf_s' : trop d'arguments passés pour la chaîne de format
-C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\Fonction.c(167,31): message :  les espaces réservés et leurs paramètres attendent des arguments 1 variadiques, mais des arguments 2 ont été fournis
-C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\Fonction.c(170,10): warning C4477:  'scanf_s' : la chaîne de format '%d' nécessite un argument de type 'int *', mais l'argument variadique 1 est de type 'uint8_t *'
-C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\Fonction.c(170,10): message :  utilisez '%hhd' dans la chaîne de format
-C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\Fonction.c(170,26): warning C4474:  'scanf_s' : trop d'arguments passés pour la chaîne de format
-C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\Fonction.c(170,26): message :  les espaces réservés et leurs paramètres attendent des arguments 1 variadiques, mais des arguments 2 ont été fournis
+﻿  convertionBin.c
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\convertionBin.c(34,1): warning C4028:  paramètre formel 2 différent de la déclaration
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\convertionBin.c(45,32): warning C4244:  '=' : conversion de 'double' en 'float', perte possible de données
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\convertionBin.c(163,30): warning C4474:  'scanf_s' : trop d'arguments passés pour la chaîne de format
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\convertionBin.c(163,30): message :  les espaces réservés et leurs paramètres attendent des arguments 1 variadiques, mais des arguments 2 ont été fournis
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\convertionBin.c(167,31): warning C4474:  'scanf_s' : trop d'arguments passés pour la chaîne de format
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\convertionBin.c(167,31): message :  les espaces réservés et leurs paramètres attendent des arguments 1 variadiques, mais des arguments 2 ont été fournis
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\convertionBin.c(170,10): warning C4477:  'scanf_s' : la chaîne de format '%d' nécessite un argument de type 'int *', mais l'argument variadique 1 est de type 'uint8_t *'
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\convertionBin.c(170,10): message :  utilisez '%hhd' dans la chaîne de format
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\convertionBin.c(170,26): warning C4474:  'scanf_s' : trop d'arguments passés pour la chaîne de format
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\convertionBin.c(170,26): message :  les espaces réservés et leurs paramètres attendent des arguments 1 variadiques, mais des arguments 2 ont été fournis
   Projet_Calculatice_23.vcxproj -> C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Debug\Projet_Calculatice_23.exe

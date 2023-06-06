@@ -19,7 +19,7 @@
 #include <stdint.h>
 
 //-- librairie personnelle --// 
-#include "fonction.h"
+#include "convertionBin.h"
 
 //---
 // Nom fonction : ConvBin

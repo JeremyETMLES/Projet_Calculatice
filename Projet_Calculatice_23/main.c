@@ -19,7 +19,7 @@
 #include <stdint.h>
 
 //-- librairie personnelle --// 
-#include "fonction.h"
+#include "convertionBin.h"
 
 //-- déclaration de constantes --// 
 

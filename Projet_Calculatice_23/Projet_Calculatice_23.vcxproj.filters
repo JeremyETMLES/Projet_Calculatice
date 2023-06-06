@@ -18,12 +18,12 @@
     <ClCompile Include="main.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Fonction.c">
+    <ClCompile Include="convertionBin.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="fonction.h">
+    <ClInclude Include="convertionBin.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
