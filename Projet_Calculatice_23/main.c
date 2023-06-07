@@ -20,6 +20,7 @@
 
 //-- librairie personnelle --// 
 #include "convertionBin.h"
+#include "fctTrigo.h"
 
 //-- déclaration de constantes --// 
 
@@ -31,6 +32,7 @@ void main()
 	uint8_t UserAnswer = 0;
 
 	do {
+		calculTrigo();
 		ChoixConvBin();
 		printf("\nVoulez-vous recommencer le programme? (q = quitter)");
 		scanf_s("%c%*c", &UserAnswer, 2);
