@@ -1,18 +1,19 @@
 #include <stdio.h>
 #include <math.h>
 #include "fctTrigo.h"
+#include <stdint.h>
 
 
 
 unsigned char fonctionChoixCotes(triangleRectangle* cote)
 {
-	unsigned char param1 = 0;
-	unsigned char param2 = 0;
-	unsigned char param3 = 0;
+	uint8_t param1 = 0;
+	uint8_t param2 = 0;
+	uint8_t param3 = 0;
 
 	//choix paramètre 1 avec cote et valeur du cote
-	printf("quelle est le coté du triangle choisi ?\n");
-	printf("1.Opposé\n2.Adjacent\n3.Hypoténuse\n");
+	printf("Quelle est le cote du triangle choisi ?\n");
+	printf("1.Oppose\n2.Adjacent\n3.Hypotenuse\n");
 	scanf("%d%*c", &param1, 1);
 	
 	while(param1 == 0)
@@ -21,7 +22,7 @@ unsigned char fonctionChoixCotes(triangleRectangle* cote)
 		scanf("%d%*c", &param1, 1);
 	}
 
-	printf("Quelle est la longueur de ce coté ?\n");
+	printf("Quelle est la longueur de ce cote ?\n");
 	if (param1 == 1)
 	{
 		scanf("%f", &cote->oppose);
@@ -39,8 +40,8 @@ unsigned char fonctionChoixCotes(triangleRectangle* cote)
 
 
 	//choix parametre 2 avec cote choisi et valeur du cote
-	printf("quelle est le coté du triangle choisi ?\n");
-	printf("1.Opposé\n2.Adjacent\n3.Hypoténuse\n");
+	printf("Quelle est le cote du triangle choisi ?\n");
+	printf("1.Oppose\n2.Adjacent\n3.Hypotenuse\n");
 	scanf("%d%*c", &param2,1);
 
 	while ((param2 == 0) || (param1 == param2))
@@ -49,7 +50,7 @@ unsigned char fonctionChoixCotes(triangleRectangle* cote)
 		scanf("%d%*c", &param2, 1);
 	}
 
-	printf("Quelle est la longueur de ce coté ?\n");
+	printf("Quelle est la longueur de ce cote ?\n");
 	if (param2 == 1)
 	{
 		scanf("%f", &cote->oppose);
@@ -67,7 +68,7 @@ unsigned char fonctionChoixCotes(triangleRectangle* cote)
 
 
 	//choix de l'unite de l'angle
-	printf("Dans quelle unite l'angle doit il etre donne?\n1.En degré\n2.En radian\n");
+	printf("Dans quelle unite l'angle doit il etre donne?\n1.En degre\n2.En radian\n");
 	scanf("%d%*c", &param3,1);
 
 	return param3;
@@ -75,47 +76,43 @@ unsigned char fonctionChoixCotes(triangleRectangle* cote)
 
 void fonctionCalcul(triangleRectangle* cote)
 {
-	if (cote->oppose != 0 && cote->adjacent != 0)
-	{
-		cote->hypothenuse = sqrt(cote->oppose ^ 2 + cote->adjacent ^ 2);
-		cote->angle.radian = atan(cote->oppose / cote->adjacent);
-		cote->angle.degre = cote->angle.radian * (180.0 / PI);
-
+	if (cote->adjacent == 0) {
+		if ((cote->oppose * cote->oppose) >= (cote->hypothenuse * cote->hypothenuse)) {
+			printf("Erreur : Les valeurs des cotes ne permettent pas de calculer l'abscisse.\n");
+			return;
+		}
+		cote->adjacent = sqrt((cote->hypothenuse * cote->hypothenuse) - (cote->oppose * cote->oppose));
 	}
-	if (cote->oppose != 0 && cote->hypothenuse != 0)
-	{
-		cote->adjacent = sqrt(cote->hypothenuse ^ 2 - cote->oppose ^ 2);
-		cote->angle.radian = asin(cote->oppose / cote->hypothenuse);
-		cote->angle.degre = cote->angle.radian * (180.0 / PI);
+	else if (cote->oppose == 0) {
+		if ((cote->adjacent * cote->adjacent) >= (cote->hypothenuse * cote->hypothenuse)) {
+			printf("Erreur : Les valeurs des cotes ne permettent pas de calculer le cote oppose.\n");
+			return;
+		}
+		cote->oppose = sqrt((cote->hypothenuse * cote->hypothenuse) - (cote->adjacent * cote->adjacent));
 	}
-	if (cote->hypothenuse != 0 && cote->adjacent != 0)
-	{
-		cote->oppose = sqrt(cote->hypothenuse ^ 2 - cote->adjacent ^ 2);
-		cote->angle.radian = acos(cote->adjacent / cote->hypothenuse);
-		cote->angle.degre = cote->angle.radian * (180.0 / PI);
+	else if (cote->hypothenuse == 0) {
+		cote->hypothenuse = sqrt((cote->oppose * cote->oppose) + (cote->adjacent * cote->adjacent));
 	}
-
-	
-
-
+	cote->angle.radian = acos(cote->adjacent / cote->hypothenuse);
 }
 
 
 void fonctionAffichage(triangleRectangle cote, unsigned char param3)
 {
 	printf("\nValeurs du triangle :\n");
-	printf("Opposé : %.2f\n", cote.oppose);
+	printf("Oppose : %.2f\n", cote.oppose);
 	printf("Adjacent : %.2f\n", cote.adjacent);
-	printf("Hypoténuse : %.2f\n", cote.hypothenuse);
+	printf("Hypotenuse : %.2f\n", cote.hypothenuse);
 	printf("Sinus : %.2f\n", sin(cote.angle.radian));
 	printf("Cosinus : %.2f\n", cos(cote.angle.radian));
 	printf("Tangente : %.2f\n", tan(cote.angle.radian));
 
 	if(param3 ==1)
 	{
-		printf("Angle : %d degré\n", cote.angle.degre);
+		cote.angle.degre = cote.angle.radian * (180.0 / PI);
+		printf("Angle : %d degre\n", cote.angle.degre);
 	}
-	if(param3 == 2)
+	else
 	{
 		printf("Angle : %.2f radian\n", cote.angle.radian);
 	}
@@ -124,7 +121,7 @@ void fonctionAffichage(triangleRectangle cote, unsigned char param3)
 void calculTrigo(void)
 {
 	triangleRectangle cote = {0, 0, 0, 0, 0, 0, 0};
-	unsigned char param3 = 0;
+	uint8_t param3 = 0;
 
 	param3 = fonctionChoixCotes(&cote);
 	fonctionCalcul(&cote);

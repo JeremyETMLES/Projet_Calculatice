@@ -1,24 +1,26 @@
 #ifndef FCT_TRIGO_H
 #define FTC_TRIGO_H
 
+#include <stdint.h>
+
 #define PI 3.14159
 
 typedef struct {
 	union {
 		float radian;
-		short degre;
+		int32_t degre;
 	}angle;
 
-	short adjacent;
-	short oppose;
-	short hypothenuse;
-	short sinus;
-	short cosinus;
-	short tangente;
+	float adjacent;
+	float oppose;
+	float hypothenuse;
+	float sinus;
+	float cosinus;
+	float tangente;
 }triangleRectangle;
 
 // Prototype de fonction
-unsigned char fonctionChoixCotes(triangleRectangle* cote);
+uint8_t fonctionChoixCotes(triangleRectangle* cote);
 void fonctionCalcul(triangleRectangle* cote);
 void fonctionAffichage(triangleRectangle cote, unsigned char param3);
 void calculTrigo(void);
