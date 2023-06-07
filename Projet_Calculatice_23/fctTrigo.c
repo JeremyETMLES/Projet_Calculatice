@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <math.h>
-#include "fctTrigo.h"
 #include <stdint.h>
+#include "fonction.h"
+
 
 
 

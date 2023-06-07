@@ -128,8 +128,7 @@
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="convertionBin.h" />
-    <ClInclude Include="fctTrigo.h" />
+    <ClInclude Include="fonction.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

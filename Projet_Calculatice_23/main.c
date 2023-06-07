@@ -19,8 +19,7 @@
 #include <stdint.h>
 
 //-- librairie personnelle --// 
-#include "convertionBin.h"
-#include "fctTrigo.h"
+#include "fonction.h"
 
 //-- déclaration de constantes --// 
 
@@ -32,8 +31,16 @@ void main()
 	uint8_t UserAnswer = 0;
 
 	do {
-		calculTrigo();
-		ChoixConvBin();
+		printf("Que vouler vous faire:\n1.Convertion d'un nombre en bineaire\n2.Calcul d'un triangle rectangle\n");
+		scanf_s("%c%*c", &UserAnswer, 2);
+		if (UserAnswer == 1)
+		{
+			ChoixConvBin();
+		}
+		else
+		{
+			calculTrigo();
+		}
 		printf("\nVoulez-vous recommencer le programme? (q = quitter)");
 		scanf_s("%c%*c", &UserAnswer, 2);
 	} while (!(UserAnswer == 'Q' || UserAnswer == 'q'));

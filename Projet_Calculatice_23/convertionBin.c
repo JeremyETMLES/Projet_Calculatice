@@ -19,7 +19,7 @@
 #include <stdint.h>
 
 //-- librairie personnelle --// 
-#include "convertionBin.h"
+#include "fonction.h"
 
 //---
 // Nom fonction : ConvBin
@@ -166,7 +166,7 @@ void ChoixConvBin(void)
 		printf("Ce programe ne prend pas en compte les valeurs négative à virgule.\n Reentrer votre valeur:");
 		scanf_s("%lf%*C", &userVal, 1);
 	}
-	printf("Choisiser un mode: \nMode normal (0) \nMode 8 bits (1) \nMode 16 bits (2) \nMode 32 bits (3) \n");
+	printf("Choisiser un mode: \n0.Mode normal \n1.Mode 8 bits \n2.Mode 16 bits \n3.Mode 32 bits \n");
 	scanf_s("%d%*C", &mode, 1);
 	AfficheBin(userVal, tbBin, sizeof(tbBin), mode);
 }
