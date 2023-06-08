@@ -49,13 +49,13 @@ void lectureCntIterations(uint16_t* cntBin, uint16_t* cntTrigo)
 // -- -
 // Nom fonction : ecritureFichierLogs
 // Paramètres entrée / sortie / inout : cntBin, cntTrigo, valeurs/-/-
-// Description : Lit le nombre de fois que les fonctions de convertion et de trigo on été utilisées
+// Description : Ajoute des lignes dans un fichier afin de sauvegarder les calculs effectués
 // Remarque : -
 // Auteur : JAR et MBR
 // Date de création	 : 08.06.2023
 // Date modification : xx.xx.2023
 //---
-void ecritureFichierLogs(uint16_t cntBin, uint16_t cntTrigo, str valeurs)
+void ecritureFichierLogs(uint16_t cntBin, uint16_t cntTrigo, uint32_t valeurs)
 {
 	// Variables locales
 	struct tm* timeInfos = localtime(time(NULL));	// Structure sauvegardant la date actuelle
@@ -78,3 +78,15 @@ void ecritureFichierLogs(uint16_t cntBin, uint16_t cntTrigo, str valeurs)
 
 	fclose(fichier);
 }
+
+// -- -
+// Nom fonction : convValeurString
+// Paramètres entrée / sortie / inout : -/-/-
+// Description : Convertit les valeurs calculées en string
+// Remarque : -
+// Auteur : JAR et MBR
+// Date de création	 : 08.06.2023
+// Date modification : xx.xx.2023
+//---
+
+uint32_t convValeurString 
