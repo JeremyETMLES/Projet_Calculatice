@@ -14,8 +14,8 @@
 //----------------------------------------------------------------------------------//
 
 //--- librairie standart ---//
-#include <stdlib.h>                 // pour les fonctions systèmes
-#include <stdio.h>                  // entrée - sortie
+#include <stdlib.h>		// pour les fonctions systèmes
+#include <stdio.h>		// entrée - sortie
 #include <stdint.h>
 
 //-- librairie personnelle --// 
@@ -30,10 +30,10 @@
 // Date de création	 : 23.05.2023
 // Date modification : 02.06.2023
 //---
-void ConvBin(double userVal, uint8_t* tbBin, uint8_t sizeTbBin)
+void ConvBin(double userVal, unsigned char* tbBin, uint8_t sizeTbBin)
 {
 	uint32_t intUserVal = 0;	// Variable de la partie entière
-	float virgule = 0;		// Variable contenant la partie après la virgule
+	double virgule = 0;		// Variable contenant la partie après la virgule
 	uint8_t i = 0;		// Variable de comptage
 
 	if (userVal < 0)
@@ -43,7 +43,7 @@ void ConvBin(double userVal, uint8_t* tbBin, uint8_t sizeTbBin)
 	}
 	intUserVal = (uint32_t)userVal;	// Récupération de la partie entière
 	virgule = userVal - intUserVal;	// Récupération de la valeur après la virgule
-	if (virgule != 0)	// Convertion de ce qui est après la vigule si il y en a
+	if (virgule != 0)	// Conversion de ce qui est après la vigule si il y en a
 	{
 		for (i = 0; i < 3; i++)
 		{
@@ -85,21 +85,19 @@ void ConvBin(double userVal, uint8_t* tbBin, uint8_t sizeTbBin)
 // Date de création	 : 02.06.2023
 // Date modification : xx.xx.20xx
 //---
-void AfficheBin(double userVal, uint8_t* tbBin, uint8_t sizeTb, uint8_t mode)
+void AfficheBin(double userVal, unsigned char* tbBin, uint8_t sizeTb, int mode)
 {
 	uint8_t i = 0;		// Variable de comptage
 	uint8_t nbBits = 0;	// Variable du nombre de bits à afficher
-	uint32_t tbMessage[] = {0};	// Tableau à afficher dans le fichier
 	uint16_t cntBin = 0;	// Compteur du nombre d'itération de la fonction bin
 	uint16_t cntTrigo = 0;	// Compteur du nombre d'itération de la fonction trigo
+	stValues values;
 
-	// Remplisage tableau
-	tbMessage[1] = (int)userVal;
-	tbMessage[2] = '.';
-	tbMessage[3] = (userVal * 100) - ((int)userVal * 100);
-	tbMessage[4] = ' ';
-	tbMessage[5] = '/';
-	tbMessage[6] = ' ';
+	for (i = 0; i < 32; i++)
+	{
+		values.tbBin[i] = 0;
+	}
+	i = 0;
 
 	// Si le mode ne correspond à aucun des 4, passer en mode normal
 	if (mode > 3)
@@ -136,6 +134,7 @@ void AfficheBin(double userVal, uint8_t* tbBin, uint8_t sizeTb, uint8_t mode)
 		default:
 			break;
 	}
+	values.nbBits = nbBits;
 	// Affichage de la valeur binéaire
 	for (i = nbBits; i > 0; i--)
 	{
@@ -144,19 +143,21 @@ void AfficheBin(double userVal, uint8_t* tbBin, uint8_t sizeTb, uint8_t mode)
 		{
 			// Afficher un point
 			printf(".");
-			tbMessage[i + 7] = '.';
+			values.tbBin[i - 1] = '.';
 		}
 		else
 		{
 			// Afficher la valeur du bit
 			printf("%d", tbBin[i - 1]);
-			// L'enregistrer dans le tableau
-			tbMessage[i + 7] = tbBin[i - 1];
+			values.tbBin[i - 1] = tbBin[i - 1];
 		}
 	}
+	values.userVal = userVal;
+	//strcpy(values.tbBin, tbBin);
+	values.mode = 0;
 	lectureCntIterations(&cntBin, &cntTrigo);
-	ecritureFichierLogs(cntBin, cntTrigo, tbMessage, sizeof(tbMessage));
-
+	cntBin++;
+	ecritureFichierLogs(cntBin, cntTrigo, values);
 }
 
 //---
@@ -172,18 +173,18 @@ void ChoixConvBin(void)
 {
 	// Variables locales
 	double userVal = 0;		// Variable de sauvegarde de la valeur à convertire
-	uint8_t tbBin[32] = { 0 };	// Tableau de sauvegarde de la convertion
-	uint8_t i = 0;		// Variable de comptage
-	uint8_t mode = 0;	// Variable du mode choisit
+	unsigned char tbBin[32] = { 0 };	// Tableau de sauvegarde de la convertion
+	uint8_t i = 0;		// Variable de comptages
+	int mode = 0;	// Variable du mode choisit
 
-	printf("Entrer la valeur a convertire: ");
-	scanf_s("%lf%*C", &userVal, 1);
+	printf("Entrer la valeur a convertir: ");
+	scanf("%lf%*C", &userVal, 1);
 	while ((userVal < 0) && (((int)(userVal * 10)) % 10))
 	{
 		printf("Ce programe ne prend pas en compte les valeurs négative à virgule.\n Reentrer votre valeur:");
-		scanf_s("%lf%*C", &userVal, 1);
+		scanf("%lf%*C", &userVal, 1);
 	}
 	printf("Choisiser un mode: \n0.Mode normal \n1.Mode 8 bits \n2.Mode 16 bits \n3.Mode 32 bits \n");
-	scanf_s("%d%*C", &mode, 1);
+	scanf("%d%*C", &mode, 1);
 	AfficheBin(userVal, tbBin, sizeof(tbBin), mode);
 }

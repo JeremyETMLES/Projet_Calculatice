@@ -31,9 +31,10 @@ void main()
 	uint8_t UserAnswer = 0;
 
 	do {
-		printf("Que vouler vous faire:\n1.Convertion d'un nombre en bineaire\n2.Calcul d'un triangle rectangle\n");
-		scanf_s("%c%*c", &UserAnswer, 2);
-		if (UserAnswer == 1)
+		printf("Que vouler vous faire:\n1.Convertion d'un nombre en binaire\n2.Calcul d'un triangle rectangle\n");
+		scanf_s("%c%*c", &UserAnswer, 1);
+		
+		if (UserAnswer == '1')
 		{
 			ChoixConvBin();
 		}
@@ -42,6 +43,6 @@ void main()
 			calculTrigo();
 		}
 		printf("\nVoulez-vous recommencer le programme? (q = quitter)");
-		scanf_s("%c%*c", &UserAnswer, 2);
+		scanf_s("%c%*c", &UserAnswer, 1);	
 	} while (!(UserAnswer == 'Q' || UserAnswer == 'q'));
 }

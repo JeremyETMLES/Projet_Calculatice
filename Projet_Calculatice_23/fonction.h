@@ -14,17 +14,17 @@
 //----------------------------------------------------------------------------------//
 
 //--- librairie standart ---//
-#include <stdlib.h>                 // pour les fonctions systèmes
-#include <stdio.h>                  // entrée - sortie
-#include <stdint.h>
+//#include <stdlib.h>                 // pour les fonctions systèmes
+//#include <stdio.h>                  // entrée - sortie
+//#include <stdint.h>
 
 #ifndef FCT_BIN_H
 #define FCT_BIN_H
 
 
 // Prototype de fonction
-void ConvBin(double userVal, uint8_t* tbBin[32], uint8_t sizeTbBin);
-void AfficheBin(double userVal, uint8_t* tbBin, uint8_t sizeTb, uint8_t mode);
+void ConvBin(double userVal, char* tbBin[32], uint8_t sizeTbBin);
+void AfficheBin(double userVal, unsigned char* tbBin, uint8_t sizeTb, uint8_t mode);
 void ChoixConvBin(void);
 
 #endif
@@ -51,7 +51,7 @@ typedef struct {
 }triangleRectangle;
 
 // Prototype de fonction
-uint8_t fonctionChoixCotes(triangleRectangle* cote);
+int fonctionChoixCotes(triangleRectangle* cote);
 void fonctionCalcul(triangleRectangle* cote);
 void fonctionAffichage(triangleRectangle cote, unsigned char param3);
 void calculTrigo(void);
@@ -61,9 +61,17 @@ void calculTrigo(void);
 #ifndef FCT_LOGS_H
 #define FCT_LOGS_H
 
+typedef struct {
+	triangleRectangle cote;
+	uint8_t modeAngle;
+	double userVal;
+	uint8_t tbBin[32];
+	uint8_t nbBits;
+	uint8_t mode;
+}stValues;
 
 // Prototype de fonction
 void lectureCntIterations(uint16_t* cntBin, uint16_t* cntTrigo);
-void ecritureFichierLogs(uint16_t cntBin, uint16_t cntTrigo, uint32_t tbValeurs[], uint8_t sizeTbValeurs);
+void ecritureFichierLogs(uint16_t cntBin, uint16_t cntTrigo, stValues values);
 
 #endif

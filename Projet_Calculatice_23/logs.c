@@ -14,11 +14,17 @@
 //----------------------------------------------------------------------------------//
 
 //--- librairie standart ---//
+#include <stdlib.h>		// pour les fonctions systèmes
 #include <stdio.h>		// entrée - sortie
+#include <stdint.h>
 #include <time.h>		// Gestion du temps réel
 
 //-- librairie personnelle --// 
 #include "fonction.h"
+
+#define _CRT_SECURE_NO_WARNINGS
+
+
 
 // -- -
 // Nom fonction : lectureCntIterations
@@ -32,15 +38,17 @@
 void lectureCntIterations(uint16_t* cntBin, uint16_t* cntTrigo)
 {
 	// Variables locales
-	uint8_t ligne[128];
-
+	uint8_t ligne[256];
+	uint8_t i = 0;
 	// Ouverture du stream du fichier en mode lecture
-	FILE* fichier = fopen("sauvlogs.txt", "r");
+	FILE* fichier = fopen("sauvlogs.txt", "r+");
 
 	while (fgets(ligne, sizeof(ligne), fichier))
+	//for(i = 0; i < 2; i++)
 	{
-		sscanf(ligne, "La fonction de convertion binéaire à été utilisée %d fois", &cntBin);
-		sscanf(ligne, "La fonction de calcul trigonomètrique à été utilisée %d fois", &cntTrigo);
+		//fgets(ligne, sizeof(ligne), fichier);
+		if(sscanf(ligne, "La fonction de convertion binaire à été utilisée %d fois", &cntBin));
+		if(sscanf(ligne, "La fonction de calcul trigonomètrique à été utilisée %d fois", &cntTrigo));
 	}
 
 	fclose(fichier);
@@ -55,26 +63,59 @@ void lectureCntIterations(uint16_t* cntBin, uint16_t* cntTrigo)
 // Date de création	 : 08.06.2023
 // Date modification : xx.xx.2023
 //---
-void ecritureFichierLogs(uint16_t cntBin, uint16_t cntTrigo, uint32_t tbValeurs[], uint8_t sizeTbValeurs)
+void ecritureFichierLogs(uint16_t cntBin, uint16_t cntTrigo, stValues values)
 {
 	// Variables locales
-	struct tm* timeInfos = localtime(time(NULL));	// Structure sauvegardant la date actuelle
+	time_t now;
+	time(&now);
+	struct tm* timeInfos = localtime(&now);	// Structure sauvegardant la date actuelle
+	uint8_t i = 0;	// Variable de comptage
 
 	// Ouverture du stream du fichier en mode écriture
-	FILE* fichier = fopen("sauvlogs.txt", "a+");
+	FILE* fichier = fopen("sauvlogs.txt", "r+");
 
 	fseek(fichier, 0, SEEK_SET);
 
-	fprintf(fichier, "La fonction de convertion binéaire à été utilisée %d fois", cntBin);
+	fprintf(fichier, "La fonction de convertion binaire à été utilisée %d fois\n", cntBin);
 	fprintf(fichier, "La fonction de calcul trigonomètrique à été utilisée %d fois", cntTrigo);
 
 	fseek(fichier, 0, SEEK_END);
 
 	// Écriture de la date 
-	fprintf(fichier, "%02d.%02d.%04d - %02d:%02d\n",
+	fprintf(fichier, "\n%02d.%02d.%04d - %02d:%02d\n",
 		timeInfos->tm_mday, timeInfos->tm_mon + 1, timeInfos->tm_year + 1900,
 		timeInfos->tm_hour, timeInfos->tm_min);
-	fprintf(fichier, "%s\n", tbValeurs);
+
+	if (values.mode == 0)
+	{
+		fprintf(fichier, "%.02lf / 0b", values.userVal);
+		for (i = values.nbBits - 1; i < values.nbBits; i--)
+		{
+			// Si la valeur est le code ASCII du point
+			if (values.tbBin[i] == 46)
+			{
+				// Afficher un point
+				fprintf(fichier, '.');
+			}
+			else
+			{
+				fprintf(fichier, "%d", values.tbBin[i]);
+			}
+		}
+	}
+	else
+	{
+		fprintf(fichier, "%.2f, %.2f / %.2f, %.3f, %.3f, %.3f, ", values.cote.oppose, values.cote.adjacent,
+			values.cote.hypothenuse, values.cote.sinus, values.cote.cosinus, values.cote.tangente);
+		if (values.modeAngle == 0)
+		{
+			fprintf(fichier, "%f", values.cote.angle.radian);
+		}
+		else
+		{
+			fprintf(fichier, "%d", values.cote.angle.degre);
+		}
+	}
 
 	fclose(fichier);
 }
