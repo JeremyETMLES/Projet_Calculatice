@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root text="ConvBin" comment="&#34;&#34;" type="sub" style="nice">
+ <children>
+
+<instruction text="&#34;Déclarer intUserVal comme uint32_t avec valeur 0&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;Déclarer virgule comme float avec valeur 0 &#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;Déclarer i comme uint8_t avec valeur 0&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<alternative text="&#34;Si userVal &#60; 0&#34;" comment="" color="FFFFFF">
+ <qTrue>
+
+<instruction text="&#34;userVal = 4294967295 + userVal + 1 &#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+ </qTrue>
+ <qFalse>
+
+ </qFalse>
+</alternative>
+<instruction text="&#34;virgule = userVal - intUserVal&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;intUserVal = (uint32_t)userVal&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<alternative text="&#34;Si virgule != 0&#34;" comment="" color="FFFFFF">
+ <qTrue>
+
+<for text="&#34;Pour i plus petit que 3&#34;" comment="" color="FFFFFF">
+ <qFor>
+
+<alternative text="&#34;Si (virgule * 2) &#60; 1 &#34;" comment="" color="FFFFFF">
+ <qTrue>
+
+<instruction text="&#34;tbBin[i] = 0&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+ </qTrue>
+ <qFalse>
+
+<instruction text="&#34;tbBin[i] = 1&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;virgule -= 0.5&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+ </qFalse>
+</alternative>
+<instruction text="&#34;virgule *= 2&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+ </qFor>
+</for>
+<instruction text="&#34;tbBin[i] = 0x2E&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;i s'incrémente&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+ </qTrue>
+ <qFalse>
+
+ </qFalse>
+</alternative>
+<while text="&#34;Tant que intUserVal &#62; 0&#34;" comment="" color="FFFFFF">
+ <qWhile>
+
+<instruction text="&#34;tbBin[i] = intUserVal % 2&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;intUserVal = intUserVal / 2&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;i s'incrémente&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+ </qWhile>
+</while>
+<alternative text="&#34;Si i &#60; sizeTbBin&#34;" comment="" color="FFFFFF">
+ <qTrue>
+
+<for text="&#34;Pour i plus petit que sizeTbBin&#34;" comment="" color="FFFFFF">
+ <qFor>
+
+<instruction text="&#34;tbBin[i] = 0&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+ </qFor>
+</for>
+ </qTrue>
+ <qFalse>
+
+ </qFalse>
+</alternative>
+ </children>
+</root>

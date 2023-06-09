@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root text="fonctionAffichage" comment="&#34;&#34;" type="sub" style="nice">
+ <children>
+
+<instruction text="&#34;Déclarer tbMessage comme tableau de uint32_t initialisé avec des zéros&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;Déclarer cntBin comme uint16_t avec valeur 0&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;Déclarer cntTrigo comme uint16_t avec valeur 0 &#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;Déclarer values comme stValues&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<call text="&#34;Afficher &#34;&#34;Valeurs du triangle :&#34;&#34;&#34;" comment="" color="FFFFFF"></call>
+<call text="&#34;Afficher &#34;&#34;Oppose : %.2f&#34;&#34; avec cote.oppose&#34;" comment="" color="FFFFFF"></call>
+<call text="&#34;Afficher &#34;&#34;Adjacent : %.2f&#34;&#34; avec cote.adjacent&#34;" comment="" color="FFFFFF"></call>
+<call text="&#34;Afficher &#34;&#34;Hypotenuse : %.2f&#34;&#34; avec cote.hypothenuse&#34;" comment="" color="FFFFFF"></call>
+<call text="&#34;Afficher &#34;&#34;Sinus : %.2f&#34;&#34; avec sin(cote.angle.radian)&#34;" comment="" color="FFFFFF"></call>
+<call text="&#34;Afficher &#34;&#34;Cosinus : %.2f&#34;&#34; avec cos(cote.angle.radian)&#34;" comment="" color="FFFFFF"></call>
+<call text="&#34;Afficher &#34;&#34;Tangente : %.2f&#34;&#34; avec tan(cote.angle.radian)&#34;" comment="" color="FFFFFF"></call>
+<instruction text="&#34;Affecter cote.oppose à values.cote.oppose&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;Affecter cote.adjacent à values.cote.adjacent&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;Affecter cote.hypothenuse à values.cote.hypothenuse&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;Affecter sin(cote.angle.radian) à values.cote.sinus&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;Affecter cos(cote.angle.radian) à values.cote.cosinus&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;Affecter tan(cote.angle.radian) à values.cote.tangente&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<alternative text="&#34;Si param3 == 1 &#34;" comment="" color="FFFFFF">
+ <qTrue>
+
+<instruction text="&#34;Affecter cote.angle.radian * (180.0 / PI) à cote.angle.degre&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<call text="&#34;Afficher &#34;&#34;Angle : %d degre&#34;&#34; avec cote.angle.degre&#34;" comment="" color="FFFFFF"></call>
+<instruction text="&#34;Affecter cote.angle.degre à values.cote.angle.degre&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;Affecter 1 à values.modeAngle&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+ </qTrue>
+ <qFalse>
+
+<instruction text="&#34;Afficher &#34;&#34;Angle : %.2f radian&#34;&#34; avec cote.angle.radian&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;Affecter cote.angle.radian à values.cote.angle.radian&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;Affecter 0 à values.modeAngle&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+ </qFalse>
+</alternative>
+<instruction text="&#34;Affecter 1 à values.mode&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<call text="&#34;lectureCntIterations(&#38;cntBin, &#38;cntTrigo)&#34;" comment="" color="FFFFFF"></call>
+<instruction text="&#34;Incrémenter cntTrigo de 1&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<call text="&#34;ecritureFichierLogs(cntBin, cntTrigo, values)&#34;" comment="" color="FFFFFF"></call>
+ </children>
+</root>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root text="ecritureFichierLogs" comment="&#34;&#34;" type="program" style="nice">
+ <children>
+
+<instruction text="&#34;Déclarer now comme time_t&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<call text="&#34;Appeler time(&#38;now)&#34;" comment="" color="FFFFFF"></call>
+<instruction text="&#34;Déclarer timeInfos comme pointeur de struct tm&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;Déclarer i comme uint8_t&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;Déclarer fichier comme pointeur de FILE&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<call text="&#34;Ouvrir le fichier &#34;&#34;sauvlogs.txt&#34;&#34; en mode écriture&#34;" comment="" color="FFFFFF"></call>
+<call text="&#34;Se déplacer au début du fichier&#34;" comment="" color="FFFFFF"></call>
+<call text="&#34;Écrire dans le fichier &#34;&#34;La fonction de convertion binaire à été utilisée %d fois\n&#34;&#34; avec cntBin&#34;" comment="" color="FFFFFF"></call>
+<call text="&#34;Écrire dans le fichier &#34;&#34;La fonction de calcul trigonomètrique à été utilisée %d fois&#34;&#34; avec cntTrigo&#34;" comment="" color="FFFFFF"></call>
+<call text="&#34;Se déplacer à la fin du fichier&#34;" comment="" color="FFFFFF"></call>
+<call text="&#34;Écrire la date dans le fichier&#34;" comment="" color="FFFFFF"></call>
+<alternative text="&#34;values.mode est égal à 0&#34;" comment="" color="FFFFFF">
+ <qTrue>
+
+<call text="&#34;Écrire dans le fichier &#34;&#34;%.02lf / 0b&#34;&#34; avec values.userVal&#34;" comment="" color="FFFFFF"></call>
+<for text="&#34;Pour i allant de values.nbBits - 1 à values.nbBits&#34;" comment="" color="FFFFFF">
+ <qFor>
+
+<alternative text="&#34;Si values.tbBin[i] est égal à 46&#34;" comment="" color="FFFFFF">
+ <qTrue>
+
+<call text="&#34;Écrire dans le fichier '.'&#34;" comment="" color="FFFFFF"></call>
+ </qTrue>
+ <qFalse>
+
+<call text="&#34;Écrire dans le fichier &#34;&#34;%d&#34;&#34;, values.tbBin[i]&#34;" comment="" color="FFFFFF"></call>
+ </qFalse>
+</alternative>
+ </qFor>
+</for>
+ </qTrue>
+ <qFalse>
+
+<call text="&#34;Écrire dans le fichier &#34;&#34;%.2f, %.2f / %.2f, %.3f, %.3f, %.3f, &#34;&#34; avec values.cote.oppose,values.cote.adjacent, values.cote.hypothenuse, values.cote.sinus, values.cote.cosinus, values.cote.tangente&#34;" comment="" color="FFFFFF"></call>
+<alternative text="&#34;Si values.modeAngle est égal à 0&#34;" comment="" color="FFFFFF">
+ <qTrue>
+
+<call text="&#34;Écrire dans le fichier &#34;&#34;%f&#34;&#34; avec values.cote.angle.radian&#34;" comment="" color="FFFFFF"></call>
+ </qTrue>
+ <qFalse>
+
+<instruction text="&#34;Écrire dans le fichier &#34;&#34;%d&#34;&#34;, values.cote.angle.degre&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+ </qFalse>
+</alternative>
+ </qFalse>
+</alternative>
+<call text="&#34;Fermer le fichier &#34;" comment="" color="FFFFFF"></call>
+ </children>
+</root>

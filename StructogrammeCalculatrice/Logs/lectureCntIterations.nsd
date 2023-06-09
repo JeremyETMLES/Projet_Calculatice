@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root text="LECTURECNTITERATIONS" comment="&#34;&#34;" type="sub" style="nice">
+ <children>
+
+<instruction text="&#34;Déclarer ligne comme tableau de uint8_t de taille 256&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;Déclarer i comme uint8_t&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;Déclarer fichier comme pointeur de FILE&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<call text="&#34;Ouvrir le fichier &#34;&#34;sauvlogs.txt&#34;&#34; en mode lecture&#34;" comment="" color="FFFFFF"></call>
+<while text="&#34;Tant que fgets(ligne, sizeof(ligne), fichier)&#34;" comment="" color="FFFFFF">
+ <qWhile>
+
+<call text="&#34;Si sscanf(ligne, &#34;&#34;La fonction de convertion binaire à été utilisée %d fois&#34;&#34;, &#38;cntBin)&#34;" comment="" color="FFFFFF"></call>
+<call text="&#34;Si sscanf(ligne, &#34;&#34;La fonction de calcul trigonomètrique à été utilisée %d fois&#34;&#34;, &#38;cntTrigo)&#34;" comment="" color="FFFFFF"></call>
+ </qWhile>
+</while>
+<call text="&#34;Fermer le fichier&#34;" comment="" color="FFFFFF"></call>
+ </children>
+</root>

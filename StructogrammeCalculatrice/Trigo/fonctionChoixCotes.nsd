@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root text="fonctionChoixCotes" comment="&#34;&#34;" type="sub" style="nice">
+ <children>
+
+<instruction text="&#34;Déclarer param1 en int&#34;" comment="&#34;&#34;" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;Déclarer param2 en int&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<instruction text="&#34;Déclarer param3 en int&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<call text="&#34;afficher &#34;&#34;Quel est le cote du triangle choisi ?&#34;&#34;&#34;" comment="&#34;&#34;" color="FFFFFF"></call>
+<call text="&#34;Afficher &#34;&#34;1.Oppose&#34;&#34;  &#34;" comment="&#34;&#34;" color="FFFFFF"></call>
+<call text="&#34;Afficher &#34;&#34;2.Adjacent&#34;&#34;&#34;" comment="&#34;&#34;" color="FFFFFF"></call>
+<call text="&#34;Afficher &#34;&#34;3.Hypotenuse&#34;&#34;&#34;" comment="&#34;&#34;" color="FFFFFF"></call>
+<call text="&#34;Lire param1&#34;" comment="&#34;&#34;" color="FFFFFF"></call>
+<while text="&#34;tant que param1 == 0&#34;" comment="&#34;&#34;" color="FFFFFF">
+ <qWhile>
+
+<call text="&#34;Afficher &#34;&#34;Cela ne correspond pas a un cote...&#34;&#34;&#34;" comment="&#34;&#34;" color="FFFFFF"></call>
+<call text="&#34;Lire param1  &#34;" comment="&#34;&#34;" color="FFFFFF"></call>
+ </qWhile>
+</while>
+<alternative text="&#34;si param1 == 1&#34;" comment="&#34;&#34;" color="FFFFFF">
+ <qTrue>
+
+<call text="&#34;Afficher &#34;&#34;Quelle est la longueur de ce cote ?&#34;&#34; &#34;" comment="&#34;&#34;" color="FFFFFF"></call>
+<call text="&#34; Lire cote-&#62;oppose    &#34;" comment="&#34;&#34;" color="FFFFFF"></call>
+ </qTrue>
+ <qFalse>
+
+ </qFalse>
+</alternative>
+<alternative text="&#34;si param1 == 2&#34;" comment="&#34;&#34;" color="FFFFFF">
+ <qTrue>
+
+<call text="&#34;Afficher &#34;&#34;Quelle est la longueur de ce cote ?&#34;&#34; &#34;" comment="" color="FFFFFF"></call>
+<call text="&#34; Lire cote-&#62;adjacent    &#34;" comment="&#34;&#34;" color="FFFFFF"></call>
+ </qTrue>
+ <qFalse>
+
+ </qFalse>
+</alternative>
+<alternative text="&#34;si param1 == 3&#34;" comment="&#34;&#34;" color="FFFFFF">
+ <qTrue>
+
+<call text="&#34;Afficher &#34;&#34;Quelle est la longueur de ce cote ?&#34;&#34; &#34;" comment="" color="FFFFFF"></call>
+<call text="&#34; Lire cote-&#62;hypothenuse&#34;" comment="&#34;&#34;" color="FFFFFF"></call>
+ </qTrue>
+ <qFalse>
+
+ </qFalse>
+</alternative>
+<call text="&#34;afficher &#34;&#34;Quel est le cote du triangle choisi ?&#34;&#34;&#34;" comment="" color="FFFFFF"></call>
+<call text="&#34;Afficher &#34;&#34;1.Oppose&#34;&#34;  &#34;" comment="" color="FFFFFF"></call>
+<call text="&#34;Afficher &#34;&#34;2.Adjacent&#34;&#34;&#34;" comment="" color="FFFFFF"></call>
+<call text="&#34;Afficher &#34;&#34;3.Hypotenuse&#34;&#34;&#34;" comment="" color="FFFFFF"></call>
+<call text="&#34;Lire param2&#34;" comment="&#34;&#34;" color="FFFFFF"></call>
+<while text="&#34;tant que param2 == 0 ou que param1 == param2&#34;" comment="&#34;&#34;" color="FFFFFF">
+ <qWhile>
+
+<call text="&#34;Afficher &#34;&#34;Cela ne correspond pas a un cote...&#34;&#34;&#34;" comment="" color="FFFFFF"></call>
+<call text="&#34;Lire param2 &#34;" comment="&#34;&#34;" color="FFFFFF"></call>
+ </qWhile>
+</while>
+<alternative text="&#34;si param2 == 1&#34;" comment="&#34;&#34;" color="FFFFFF">
+ <qTrue>
+
+<call text="&#34;Afficher &#34;&#34;Quelle est la longueur de ce cote ?&#34;&#34; &#34;" comment="" color="FFFFFF"></call>
+<call text="&#34; Lire cote-&#62;oppose    &#34;" comment="" color="FFFFFF"></call>
+ </qTrue>
+ <qFalse>
+
+ </qFalse>
+</alternative>
+<alternative text="&#34;si param2 == 2&#34;" comment="&#34;&#34;" color="FFFFFF">
+ <qTrue>
+
+<call text="&#34;Afficher &#34;&#34;Quelle est la longueur de ce cote ?&#34;&#34; &#34;" comment="" color="FFFFFF"></call>
+<call text="&#34; Lire cote-&#62;adjacent    &#34;" comment="" color="FFFFFF"></call>
+ </qTrue>
+ <qFalse>
+
+ </qFalse>
+</alternative>
+<alternative text="&#34;si param2 == 3&#34;" comment="&#34;&#34;" color="FFFFFF">
+ <qTrue>
+
+<call text="&#34;Afficher &#34;&#34;Quelle est la longueur de ce cote ?&#34;&#34; &#34;" comment="" color="FFFFFF"></call>
+<call text="&#34; Lire cote-&#62;hypothenuse&#34;" comment="" color="FFFFFF"></call>
+ </qTrue>
+ <qFalse>
+
+ </qFalse>
+</alternative>
+<call text="&#34;Afficher &#34;&#34;Dans quelle unité l'angle doit il être donné?&#34;&#34; &#34;" comment="&#34;&#34;" color="FFFFFF"></call>
+<call text="&#34;Afficher &#34;&#34;1.En degre&#34;&#34; &#34;" comment="&#34;&#34;" color="FFFFFF"></call>
+<call text="&#34;Afficher &#34;&#34;2.En radian&#34;&#34; &#34;" comment="&#34;&#34;" color="FFFFFF"></call>
+<call text="&#34;Lire param3&#34;" comment="" color="FFFFFF"></call>
+<instruction text="&#34;Retourner param3&#34;" comment="&#34;&#34;" color="FFFFFF" rotated="0"></instruction>
+ </children>
+</root>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root text="main" comment="&#34;&#34;" type="program" style="nice">
+ <children>
+
+<instruction text="&#34;Déclarer UserAnswer comme uint8_t&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+<while text="&#34;faire tant que UserAnswer n'est pas égal à 'Q' et UserAnswer n'est pas égal à 'q'&#34;" comment="" color="FFFFFF">
+ <qWhile>
+
+<call text="&#34;Afficher &#34;&#34;Que voulez-vous faire:&#34;&#34;&#34;" comment="" color="FFFFFF"></call>
+<call text="&#34;Afficher &#34;&#34;1. Conversion d'un nombre en binaire&#34;&#34;&#34;" comment="" color="FFFFFF"></call>
+<call text="&#34;Afficher &#34;&#34;2. Calcul d'un triangle rectangle&#34;&#34;&#34;" comment="" color="FFFFFF"></call>
+<call text="&#34;Lire UserAnswer&#34;" comment="" color="FFFFFF"></call>
+<alternative text="&#34;Si UserAnswer est égal à '1'&#34;" comment="" color="FFFFFF">
+ <qTrue>
+
+<instruction text="&#34;Appeler ChoixConvBin()&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+ </qTrue>
+ <qFalse>
+
+<instruction text="&#34;Appeler calculTrigo()&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+ </qFalse>
+</alternative>
+<call text="&#34;Afficher &#34;&#34;Voulez-vous recommencer le programme? (q = quitter)&#34;&#34;&#34;" comment="" color="FFFFFF"></call>
+<call text="&#34;Lire UserAnswer&#34;" comment="" color="FFFFFF"></call>
+ </qWhile>
+</while>
+ </children>
+</root>

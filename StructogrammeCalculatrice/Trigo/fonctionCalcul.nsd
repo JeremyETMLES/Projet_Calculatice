@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root text="fonctionCalcul" comment="&#34;&#34;" type="sub" style="nice">
+ <children>
+
+<alternative text="&#34;Si cote-&#62;adjacent == 0&#34;" comment="&#34;&#34;" color="FFFFFF">
+ <qTrue>
+
+<alternative text="&#34;Si (cote-&#62;oppose * cote-&#62;oppose) &#62;= (cote-&#62;hypothenuse * cote-&#62;hypothenuse)&#34;" comment="&#34;&#34;" color="FFFFFF">
+ <qTrue>
+
+<call text="&#34;Afficher &#34;&#34;Erreur : Les valeurs des cotes ne permettent pas de calculer l'abscisse.&#34;&#34;&#34;" comment="" color="FFFFFF"></call>
+<instruction text="retourner" comment="&#34;&#34;" color="FFFFFF" rotated="0"></instruction>
+ </qTrue>
+ <qFalse>
+
+ </qFalse>
+</alternative>
+<instruction text="&#34;cote-&#62;adjacent = sqrt((cote-&#62;hypothenuse * cote-&#62;hypothenuse) - (cote-&#62;oppose *cote-&#62;oppose))&#34;" comment="&#34;&#34;" color="FFFFFF" rotated="0"></instruction>
+ </qTrue>
+ <qFalse>
+
+<alternative text="&#34;Sinon, si cote-&#62;oppose == 0&#34;" comment="" color="FFFFFF">
+ <qTrue>
+
+<alternative text="&#34; Si (cote-&#62;adjacent * cote-&#62;adjacent) &#62;= (cote-&#62;hypothenuse * cote-&#62;hypothenuse)&#34;" comment="" color="FFFFFF">
+ <qTrue>
+
+<call text="&#34;Afficher &#34;&#34;Erreur : Les valeurs des cotesne permettent pas de calculer le cote oppose&#34;" comment="" color="FFFFFF"></call>
+<instruction text="retourner" comment="" color="FFFFFF" rotated="0"></instruction>
+ </qTrue>
+ <qFalse>
+
+ </qFalse>
+</alternative>
+<instruction text="&#34;cote-&#62;adjacent = sqrt((cote-&#62;hypothenuse * cote-&#62;hypothenuse) - (cote-&#62;adjacent*cote-&#62;adjacent))&#34;" comment="&#34;&#34;" color="FFFFFF" rotated="0"></instruction>
+ </qTrue>
+ <qFalse>
+
+<alternative text="&#34;Sinon, si cote-&#62;hypothenuse == 0&#34;" comment="" color="FFFFFF">
+ <qTrue>
+
+<instruction text="&#34;cote-&#62;hypothenuse = sqrt((cote-&#62;oppose * cote-&#62;oppose) + (cote-&#62;adjacent * cote-&#62;adjacent))&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+ </qTrue>
+ <qFalse>
+
+ </qFalse>
+</alternative>
+ </qFalse>
+</alternative>
+ </qFalse>
+</alternative>
+<instruction text="&#34;cote-&#62;angle.radian = acos(cote-&#62;adjacent / cote-&#62;hypothenuse) &#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+ </children>
+</root>
