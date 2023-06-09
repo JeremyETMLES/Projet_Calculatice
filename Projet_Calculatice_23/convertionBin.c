@@ -89,6 +89,17 @@ void AfficheBin(double userVal, uint8_t* tbBin, uint8_t sizeTb, uint8_t mode)
 {
 	uint8_t i = 0;		// Variable de comptage
 	uint8_t nbBits = 0;	// Variable du nombre de bits à afficher
+	uint32_t tbMessage[] = {0};	// Tableau à afficher dans le fichier
+	uint16_t cntBin = 0;	// Compteur du nombre d'itération de la fonction bin
+	uint16_t cntTrigo = 0;	// Compteur du nombre d'itération de la fonction trigo
+
+	// Remplisage tableau
+	tbMessage[1] = (int)userVal;
+	tbMessage[2] = '.';
+	tbMessage[3] = (userVal * 100) - ((int)userVal * 100);
+	tbMessage[4] = ' ';
+	tbMessage[5] = '/';
+	tbMessage[6] = ' ';
 
 	// Si le mode ne correspond à aucun des 4, passer en mode normal
 	if (mode > 3)
@@ -133,13 +144,19 @@ void AfficheBin(double userVal, uint8_t* tbBin, uint8_t sizeTb, uint8_t mode)
 		{
 			// Afficher un point
 			printf(".");
+			tbMessage[i + 7] = '.';
 		}
 		else
 		{
 			// Afficher la valeur du bit
 			printf("%d", tbBin[i - 1]);
+			// L'enregistrer dans le tableau
+			tbMessage[i + 7] = tbBin[i - 1];
 		}
 	}
+	lectureCntIterations(&cntBin, &cntTrigo);
+	ecritureFichierLogs(cntBin, cntTrigo, tbMessage, sizeof(tbMessage));
+
 }
 
 //---

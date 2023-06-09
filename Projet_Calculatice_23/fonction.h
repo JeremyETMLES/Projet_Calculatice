@@ -13,8 +13,13 @@
 // 						 
 //----------------------------------------------------------------------------------//
 
-#ifndef HEADER
-#define HEADER
+//--- librairie standart ---//
+#include <stdlib.h>                 // pour les fonctions systèmes
+#include <stdio.h>                  // entrée - sortie
+#include <stdint.h>
+
+#ifndef FCT_BIN_H
+#define FCT_BIN_H
 
 
 // Prototype de fonction
@@ -50,5 +55,15 @@ uint8_t fonctionChoixCotes(triangleRectangle* cote);
 void fonctionCalcul(triangleRectangle* cote);
 void fonctionAffichage(triangleRectangle cote, unsigned char param3);
 void calculTrigo(void);
+
+#endif
+
+#ifndef FCT_LOGS_H
+#define FCT_LOGS_H
+
+
+// Prototype de fonction
+void lectureCntIterations(uint16_t* cntBin, uint16_t* cntTrigo);
+void ecritureFichierLogs(uint16_t cntBin, uint16_t cntTrigo, uint32_t tbValeurs[], uint8_t sizeTbValeurs);
 
 #endif

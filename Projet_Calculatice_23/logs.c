@@ -32,7 +32,7 @@
 void lectureCntIterations(uint16_t* cntBin, uint16_t* cntTrigo)
 {
 	// Variables locales
-	char ligne[128];
+	uint8_t ligne[128];
 
 	// Ouverture du stream du fichier en mode lecture
 	FILE* fichier = fopen("sauvlogs.txt", "r");
@@ -55,7 +55,7 @@ void lectureCntIterations(uint16_t* cntBin, uint16_t* cntTrigo)
 // Date de création	 : 08.06.2023
 // Date modification : xx.xx.2023
 //---
-void ecritureFichierLogs(uint16_t cntBin, uint16_t cntTrigo, uint32_t valeurs)
+void ecritureFichierLogs(uint16_t cntBin, uint16_t cntTrigo, uint32_t tbValeurs[], uint8_t sizeTbValeurs)
 {
 	// Variables locales
 	struct tm* timeInfos = localtime(time(NULL));	// Structure sauvegardant la date actuelle
@@ -71,22 +71,10 @@ void ecritureFichierLogs(uint16_t cntBin, uint16_t cntTrigo, uint32_t valeurs)
 	fseek(fichier, 0, SEEK_END);
 
 	// Écriture de la date 
-	fprintf(file, "%02d.%02d.%04d - %02d:%02d\n",
+	fprintf(fichier, "%02d.%02d.%04d - %02d:%02d\n",
 		timeInfos->tm_mday, timeInfos->tm_mon + 1, timeInfos->tm_year + 1900,
 		timeInfos->tm_hour, timeInfos->tm_min);
-	fprintf(fichier, "%s\n", valeurs);
+	fprintf(fichier, "%s\n", tbValeurs);
 
 	fclose(fichier);
 }
-
-// -- -
-// Nom fonction : convValeurString
-// Paramètres entrée / sortie / inout : -/-/-
-// Description : Convertit les valeurs calculées en string
-// Remarque : -
-// Auteur : JAR et MBR
-// Date de création	 : 08.06.2023
-// Date modification : xx.xx.2023
-//---
-
-uint32_t convValeurString 

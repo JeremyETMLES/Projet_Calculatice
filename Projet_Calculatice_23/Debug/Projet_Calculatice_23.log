@@ -1,4 +1,16 @@
-﻿  fctTrigo.c
+﻿  convertionBin.c
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\convertionBin.c(34,1): warning C4028:  paramètre formel 2 différent de la déclaration
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\convertionBin.c(45,32): warning C4244:  '=' : conversion de 'double' en 'float', perte possible de données
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\convertionBin.c(99,55): warning C4244:  '=' : conversion de 'double' en 'uint32_t', perte possible de données
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\convertionBin.c(180,30): warning C4474:  'scanf_s' : trop d'arguments passés pour la chaîne de format
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\convertionBin.c(180,30): message :  les espaces réservés et leurs paramètres attendent des arguments 1 variadiques, mais des arguments 2 ont été fournis
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\convertionBin.c(184,31): warning C4474:  'scanf_s' : trop d'arguments passés pour la chaîne de format
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\convertionBin.c(184,31): message :  les espaces réservés et leurs paramètres attendent des arguments 1 variadiques, mais des arguments 2 ont été fournis
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\convertionBin.c(187,10): warning C4477:  'scanf_s' : la chaîne de format '%d' nécessite un argument de type 'int *', mais l'argument variadique 1 est de type 'uint8_t *'
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\convertionBin.c(187,10): message :  utilisez '%hhd' dans la chaîne de format
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\convertionBin.c(187,26): warning C4474:  'scanf_s' : trop d'arguments passés pour la chaîne de format
+  fctTrigo.c
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\convertionBin.c(187,26): message :  les espaces réservés et leurs paramètres attendent des arguments 1 variadiques, mais des arguments 2 ont été fournis
 C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\fctTrigo.c(18,8): warning C4477:  'scanf' : la chaîne de format '%d' nécessite un argument de type 'int *', mais l'argument variadique 1 est de type 'uint8_t *'
 C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\fctTrigo.c(18,8): message :  utilisez '%hhd' dans la chaîne de format
 C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\fctTrigo.c(18,26): warning C4474:  'scanf' : trop d'arguments passés pour la chaîne de format
@@ -45,5 +57,23 @@ C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\fc
 C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\fctTrigo.c(92,99): warning C4244:  '=' : conversion de 'double' en 'float', perte possible de données
 C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\fctTrigo.c(95,94): warning C4244:  '=' : conversion de 'double' en 'float', perte possible de données
 C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\fctTrigo.c(97,63): warning C4244:  '=' : conversion de 'double' en 'float', perte possible de données
+  logs.c
 C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\fctTrigo.c(113,54): warning C4244:  '=' : conversion de 'double' en 'int32_t', perte possible de données
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\logs.c(42,17): warning C4477:  'sscanf' : la chaîne de format '%d' nécessite un argument de type 'int *', mais l'argument variadique 1 est de type 'uint16_t **'
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\logs.c(43,17): warning C4477:  'sscanf' : la chaîne de format '%d' nécessite un argument de type 'int *', mais l'argument variadique 1 est de type 'uint16_t **'
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\logs.c(38,1): warning C4996:  'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(208): message :  voir la déclaration de 'fopen'
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\logs.c(42,1): warning C4996:  'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(2263): message :  voir la déclaration de 'sscanf'
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\logs.c(43,1): warning C4996:  'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(2263): message :  voir la déclaration de 'sscanf'
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\logs.c(61,45): warning C4047:  'fonction' : les niveaux d'indirection de 'const time_t *const ' et de 'time_t' sont différents
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\logs.c(61,45): warning C4024:  'localtime' : types différents pour le paramètre formel et réel 1
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\logs.c(77,19): warning C4477:  'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 1 est de type 'uint32_t *'
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\logs.c(61,1): warning C4996:  'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\time.h(506): message :  voir la déclaration de 'localtime'
+C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Projet_Calculatice_23\logs.c(64,1): warning C4996:  'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  main.c
+  Génération de code en cours...
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(208): message :  voir la déclaration de 'fopen'
   Projet_Calculatice_23.vcxproj -> C:\Users\jeraffolter\Desktop\Prog\Projet_Calculatice_23\Debug\Projet_Calculatice_23.exe

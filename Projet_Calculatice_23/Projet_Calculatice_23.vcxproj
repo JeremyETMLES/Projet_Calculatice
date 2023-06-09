@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="convertionBin.c" />
     <ClCompile Include="fctTrigo.c" />
+    <ClCompile Include="logs.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
